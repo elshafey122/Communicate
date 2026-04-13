@@ -1,0 +1,223 @@
+.navbar {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-start > div:hover .w-10 {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.tab {
+  background: rgba(255, 255, 255, 0.9);
+  color: #be185d;
+  border: 1px solid rgba(244, 114, 182, 0.2);
+  font-weight: 500;
+}
+
+.tab:not(.tab-active):hover {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(251, 113, 133, 0.15));
+  color: #ec4899;
+  transform: translateY(-1px);
+  border-color: rgba(244, 114, 182, 0.4);
+}
+
+.tab-active {
+  background: linear-gradient(135deg, #f472b6, #fb7185) !important;
+  color: white !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.3);
+}
+
+.input {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(244, 114, 182, 0.3);
+  color: #374151;
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.1);
+  border-color: #f472b6;
+  background: rgba(255, 255, 255, 1) !important;
+}
+
+.btn {
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(244, 114, 182, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:not(:disabled) {
+  background: linear-gradient(135deg, #f472b6, #ef4444);
+  border: none;
+  color: white;
+}
+
+.btn:disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(244, 114, 182, 0.2);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(244, 114, 182, 0.4);
+}
+
+.dropdown-content {
+  animation: slideIn 0.2s ease-out;
+  border: 1px solid rgba(244, 114, 182, 0.3);
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 9999 !important;
+}
+
+.dropdown-end {
+  position: relative;
+  z-index: 1001;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu li > * {
+  color: #374151;
+  background: transparent;
+}
+
+.menu li > *:hover {
+  transform: translateX(4px);
+  transition: transform 0.2s ease-in-out;
+  background: rgba(244, 114, 182, 0.1) !important;
+  color: #be185d !important;
+}
+
+.menu-title {
+  color: #be185d !important;
+  font-weight: 600;
+  background: rgba(244, 114, 182, 0.05);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.loading-spinner {
+  border-top-color: #ffffff;
+}
+
+.dropdown-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 114, 182, 0.3) transparent;
+}
+
+.dropdown-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: rgba(244, 114, 182, 0.3);
+  border-radius: 2px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 114, 182, 0.5);
+}
+
+@media (max-width: 768px) {
+  .navbar-start > div {
+    font-size: 1.25rem;
+  }
+  
+  .tabs {
+    transform: scale(0.9);
+  }
+  
+  .input {
+    width: 120px !important;
+  }
+}
+
+.bg-white\/70 {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bg-white\/80 {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bg-white\/95 {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.tab:focus {
+  outline: 2px solid rgba(244, 114, 182, 0.6);
+  outline-offset: 2px;
+}
+
+.btn:focus {
+  outline: 2px solid rgba(244, 114, 182, 0.6);
+  outline-offset: 2px;
+}
+
+.divider {
+  border-color: rgba(244, 114, 182, 0.2);
+}
+
+.text-pink-600 {
+  color: #be185d !important;
+}
+
+.border-pink-200 {
+  border-color: rgba(244, 114, 182, 0.3) !important;
+}
+
+.focus\:border-pink-400:focus {
+  border-color: #f472b6 !important;
+}
+
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

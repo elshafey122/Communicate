@@ -1,0 +1,14 @@
+.btn-pink-primary {
+  background-color: transparent;
+  border: 2px solid #F9718E;
+  color: #F9718E;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pink-primary:hover {
+  background-color: #F9718E;
+  color: #FEF2F6;
+}

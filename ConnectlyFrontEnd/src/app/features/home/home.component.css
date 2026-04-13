@@ -1,0 +1,76 @@
+/* Custom animations and effects */
+.hero {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 25%, #fbcfe8 50%, #f9a8d4 75%, #f472b6 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating animation for cards */
+.hero-content > div > div:nth-child(4) .bg-white\/60:nth-child(1) {
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-content > div > div:nth-child(4) .bg-white\/60:nth-child(2) {
+  animation: float 6s ease-in-out infinite 2s;
+}
+
+.hero-content > div > div:nth-child(4) .bg-white\/60:nth-child(3) {
+  animation: float 6s ease-in-out infinite 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Pulse animation for the main logo */
+.hero-content > div > div:first-child .w-20 {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Glass morphism effect */
+.bg-white\/60 {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bg-white\/80 {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* Custom shadow classes */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Button hover effects */
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+}

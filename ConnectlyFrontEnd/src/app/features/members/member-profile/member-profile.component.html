@@ -1,0 +1,169 @@
+<div class="p-6 h-full">
+  <div class="mb-8">
+    <div>
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">Profile</h1>
+      <div class="w-16 h-1 rounded-full" style="background-color: rgb(252, 60, 114);"></div>
+    </div>
+  </div>
+
+  @if (memberService.editMode()) {
+  <form #editForm="ngForm" (ngSubmit)="updateProfile()" class="flex flex-col w-full gap-4">
+    <label class="floating-label">
+      <span>Username</span>
+      <input type="text" name="userName" [(ngModel)]="editableMember.userName" class="input w-full floating-input"
+        placeholder="username" />
+    </label>
+    <label class="floating-label">
+      <span>Description</span>
+      <input type="text" name="description" [(ngModel)]="editableMember.description" class="input w-full floating-input"
+        placeholder="description" />
+    </label>
+    <label class="floating-label">
+      <span>City</span>
+      <input type="text" name="city" [(ngModel)]="editableMember.city" class="input w-full floating-input"
+        placeholder="city" />
+    </label>
+    <label class="floating-label">
+      <span>Country</span>
+      <input type="text" name="country" [(ngModel)]="editableMember.country" class="input w-full floating-input"
+        placeholder="country" />
+    </label>
+    <div class="flex self-end">
+      <button [disabled]="!editForm.dirty" type="submit" class="btn btn-success">
+        Save Changes
+      </button>
+    </div>
+  </form>
+  }
+  @else {
+  <div *ngIf="memberService.member() as memberData" class="space-y-6">
+
+    <div class="bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl p-6 border-l-4"
+      style="border-left-color: rgb(252, 60, 114);">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+        <i class="fas fa-user mr-3" style="color: rgb(252, 60, 114);"></i>
+        Basic Information
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="info-item">
+          <label class="info-label">Username</label>
+          <p class="info-value">{{ memberData.userName }}</p>
+        </div>
+
+        <div class="info-item">
+          <label class="info-label">Age</label>
+          <p class="info-value">{{ memberData.dateOfBirth | ageCalculator }} years old</p>
+        </div>
+
+        <div class="info-item">
+          <label class="info-label">Gender</label>
+          <p class="info-value capitalize">{{ memberData.gender }}</p>
+        </div>
+
+        <div class="info-item">
+          <label class="info-label">Location</label>
+          <p class="info-value flex items-center">
+            <i class="fas fa-map-marker-alt mr-2" style="color: rgb(252, 60, 114);"></i>
+            {{ memberData.city }}, {{ memberData.country }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 border-l-4 border-green-500">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+        <i class="fas fa-clock text-green-500 mr-3"></i>
+        Activity Status
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="info-item">
+          <label class="info-label">Last Active</label>
+          <p class="info-value flex items-center">
+            <span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+            {{ memberData.lastActive | timeAgo }}
+          </p>
+        </div>
+
+        <div class="info-item">
+          <label class="info-label">Member Since</label>
+          <p class="info-value">{{ memberData.created | date:'MMMM d, yyyy' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="memberData.description"
+      class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+        <i class="fas fa-quote-left text-purple-500 mr-3"></i>
+        About Me
+      </h2>
+
+      <div class="prose prose-gray max-w-none">
+        <p
+          class="text-gray-700 leading-relaxed text-base bg-white p-4 rounded-lg shadow-sm border-l-2 border-purple-300">
+          {{ memberData.description }}
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border-l-4 border-blue-500">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+        <i class="fas fa-info-circle text-blue-500 mr-3"></i>
+        Personal Details
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="info-item">
+          <label class="info-label">Date of Birth</label>
+          <p class="info-value">{{ memberData.dateOfBirth | date:'MMMM d, yyyy' }}</p>
+        </div>
+
+        <div class="info-item">
+          <label class="info-label">Profile ID</label>
+          <p class="info-value font-mono text-sm bg-gray-100 px-2 py-1 rounded">{{ memberData.id }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl p-6 shadow-md border-t-4" style="border-top-color: rgb(252, 60, 114);">
+        <div class="text-center">
+          <i class="fas fa-calendar-plus text-3xl mb-2" style="color: rgb(252, 60, 114);"></i>
+          <p class="text-2xl font-bold text-gray-800">{{ memberData.created | platformDays }}</p>
+          <p class="text-sm text-gray-600">Days on platform</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-md border-t-4 border-green-500">
+        <div class="text-center">
+          <i class="fas fa-eye text-3xl text-green-500 mb-2"></i>
+          <p class="text-2xl font-bold text-gray-800">{{ memberData.lastActive | activityStatus }}</p>
+          <p class="text-sm text-gray-600">Activity level</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl p-6 shadow-md border-t-4 border-blue-500">
+        <div class="text-center">
+          <i class="fas fa-map text-3xl text-blue-500 mb-2"></i>
+          <p class="text-2xl font-bold text-gray-800">{{ memberData.country.length > 8 ? (memberData.country |
+            slice:0:8) + '...' : memberData.country }}</p>
+          <p class="text-sm text-gray-600">Country</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div *ngIf="!memberService.member()" class="flex items-center justify-center h-64">
+    <div class="text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-t-4 mx-auto mb-4"
+        style="border-top-color: rgb(252, 60, 114);"></div>
+      <p class="text-gray-600">Loading profile...</p>
+    </div>
+  </div>
+
+  }
+
+</div>

@@ -1,0 +1,94 @@
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grid > * {
+  animation: slideUp 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.grid > *:nth-child(1) { animation-delay: 0.1s; }
+.grid > *:nth-child(2) { animation-delay: 0.2s; }
+.grid > *:nth-child(3) { animation-delay: 0.3s; }
+.grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom button styles for pink theme */
+.btn-pink-primary {
+  background-color: transparent;
+  border: 2px solid #F9718E;
+  color: #F9718E;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pink-primary:hover {
+  background-color: #F9718E;
+  color: #FEF2F6;
+}
+
+.btn-pink-secondary {
+  background-color: transparent;
+  border: 2px solid #FEF2F6;
+  color: #F9718E;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pink-secondary:hover {
+  background-color: #FEF2F6;
+  color: #F9718E;
+}
+
+/* Alternative filled styles */
+.btn-pink-filled {
+  background-color: #F9718E;
+  border: 2px solid #F9718E;
+  color: #FEF2F6;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pink-filled:hover {
+  background-color: #e85d7a;
+  border-color: #e85d7a;
+}
+
+.btn-pink-light {
+  background-color: #FEF2F6;
+  border: 2px solid #FEF2F6;
+  color: #F9718E;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pink-light:hover {
+  background-color: #fce4ec;
+  border-color: #fce4ec;
+}

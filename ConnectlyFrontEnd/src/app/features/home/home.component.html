@@ -1,0 +1,147 @@
+<div class="min-h-screen bg-gradient-to-br from-pink-50 via-rose-25 to-pink-100">
+  <!-- Hero Section -->
+  <div class="hero min-h-screen" *ngIf="!isLoggedIn()">
+    <div class="hero-content text-center">
+      <div class="max-w-4xl">
+        <!-- Logo and Brand -->
+        <div class="flex justify-center mb-8">
+          <div class="flex items-center space-x-4">
+            <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center shadow-2xl">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h1 class="text-6xl font-bold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
+              Connectly
+            </h1>
+          </div>
+        </div>
+
+        <!-- Main Heading -->
+        <h2 class="text-5xl font-bold text-gray-800 mb-6 leading-tight">
+          Where Hearts Meet & 
+          <span class="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+            Love Blooms
+          </span>
+        </h2>
+
+        <!-- Subtitle -->
+        <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+          Discover meaningful connections in a world full of possibilities. 
+          Join thousands of singles who have found their perfect match through authentic conversations and genuine bonds.
+        </p>
+
+        <!-- Features Grid -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-pink-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Verified Profiles</h3>
+            <p class="text-gray-600">Every profile is verified to ensure authentic connections and a safe dating environment.</p>
+          </div>
+
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-pink-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Smart Matching</h3>
+            <p class="text-gray-600">Our advanced algorithm finds your perfect match based on compatibility and shared interests.</p>
+          </div>
+
+          <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-pink-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Secure Messaging</h3>
+            <p class="text-gray-600">Connect safely with encrypted messaging and privacy controls you can trust.</p>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="space-y-4">
+          <button 
+            class="btn btn-lg bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700 text-white border-none shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 px-12 py-4 text-lg font-semibold rounded-full"
+            (click)="navigateToRegister()"
+          >
+            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+            </svg>
+            Start Your Love Story Today
+          </button>
+          <p class="text-sm text-gray-500 mt-4">
+            Join over 50,000+ happy couples who found love on Connectly
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logged In Home View -->
+  <div class="min-h-screen py-12" *ngIf="isLoggedIn()">
+    <div class="container mx-auto px-4">
+      <!-- Welcome Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">
+          Welcome back, 
+          <span class="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">
+            {{ currentUser()?.userName }}!
+          </span>
+        </h1>
+        <p class="text-lg text-gray-600">Ready to discover your next meaningful connection?</p>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-pink-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Discover Matches</h3>
+          <p class="text-gray-600 mb-6 text-center">Find people who share your interests and values</p>
+          <a routerLink="/members"
+            class="btn w-full bg-gradient-to-r from-pink-400 to-rose-500 hover:from-pink-500 hover:to-rose-600 text-white border-none shadow-lg"
+          >
+            Find Matches
+          </a>
+        </div>
+
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-pink-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Your Messages</h3>
+          <p class="text-gray-600 mb-6 text-center">Continue conversations with your matches</p>
+          <a routerLink="/messages" class="btn w-full bg-gradient-to-r from-pink-400 to-rose-500 hover:from-pink-500 hover:to-rose-600 text-white border-none shadow-lg">
+            View Messages
+          </a>
+        </div>
+
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-pink-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+          <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Your Profile</h3>
+          <p class="text-gray-600 mb-6 text-center">Update your photos and bio to attract more matches</p>
+          <a routerLink="/members/{{currentUser()?.id}}" class="btn w-full bg-gradient-to-r from-pink-400 to-rose-500 hover:from-pink-500 hover:to-rose-600 text-white border-none shadow-lg">
+            Edit Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

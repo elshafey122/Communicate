@@ -1,0 +1,137 @@
+
+/* Custom animations and effects */
+.bg-gradient-to-br {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 25%, #fbcfe8 50%, #f9a8d4 75%, #f472b6 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Form container animation */
+.bg-white {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  animation: slideUp 0.6s ease-out;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo pulse animation */
+.w-16.h-16 {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Input focus effects and text visibility */
+.input {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+}
+
+.input:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.25);
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+}
+
+.input::placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+/* Button hover effects */
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+}
+
+/* Password requirement animations */
+.text-green-500, .text-green-600 {
+  animation: checkmarkAppear 0.3s ease-in-out;
+}
+
+@keyframes checkmarkAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Form validation styling */
+.border-green-300 {
+  border-color: #86efac !important;
+  box-shadow: 0 0 0 1px #86efac;
+}
+
+.border-red-300 {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 1px #fca5a5;
+}
+
+/* Loading spinner custom styling */
+.loading-spinner {
+  border-top-color: currentColor;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .bg-white {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .input-lg {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.15);
+}
+
+.absolute button:hover {
+  transform: scale(1.1);
+}
+
+/* Ensure text is always visible */
+input[type="text"], input[type="email"], input[type="password"] {
+  -webkit-text-fill-color: #1f2937 !important;
+  -webkit-opacity: 1 !important;
+}

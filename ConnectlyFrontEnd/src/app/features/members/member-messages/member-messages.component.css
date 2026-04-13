@@ -1,0 +1,77 @@
+/* Custom scrollbar styles for webkit browsers */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(251 207 232) rgb(253 242 248);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-track-pink-50::-webkit-scrollbar-track {
+  background-color: rgb(253 242 248);
+  border-radius: 4px;
+}
+
+.scrollbar-thumb-pink-200::-webkit-scrollbar-thumb {
+  background-color: rgb(251 207 232);
+  border-radius: 4px;
+}
+
+.scrollbar-thumb-pink-200::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(244 114 182);
+}
+
+/* Animation classes */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.3s ease-out;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.3s ease-out;
+}
+
+/* Smooth scroll behavior */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Message container specific styles */
+.message-wrapper {
+  flex-shrink: 0;
+}
+
+/* Ensure the chat container takes full height and doesn't grow beyond screen */
+.flex-1 {
+  flex: 1 1 0%;
+  min-height: 0; /* Important for flexbox scrolling */
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 640px) {
+  .max-w-xs {
+    max-width: calc(100vw - 120px);
+  }
+}

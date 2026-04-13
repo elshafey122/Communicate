@@ -1,0 +1,54 @@
+/* member-detailed.component.css */
+
+.nav-item {
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: rgba(252, 60, 114, 0.1) !important;
+  border-left-color: rgb(252, 60, 114) !important;
+}
+
+.nav-item.active {
+  background-color: rgba(252, 60, 114, 0.15) !important;
+  border-left-color: rgb(252, 60, 114) !important;
+  color: rgb(252, 60, 114) !important;
+}
+
+.online-indicator {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbar for content area */
+.content-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content-area::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+  background: rgba(252, 60, 114, 0.3);
+  border-radius: 3px;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+  background: rgba(252, 60, 114, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+  }
+  
+  .w-\[35\%\] {
+    width: 100% !important;
+  }
+  
+  .w-\[65\%\] {
+    width: 100% !important;
+  }
+}

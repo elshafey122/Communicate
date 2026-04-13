@@ -1,0 +1,38 @@
+<div class="flex flex-col w-full p-2">
+  <div class="flex justify-between items-center mb-4">
+    <div class="flex gap-3">
+      <button (click)="openModal()" class="btn-pink-primary">
+        Select filters
+      </button>
+      <button (click)="resetFilters()" class="btn-pink-secondary">
+        Reset filters
+      </button>
+    </div>
+    @if (paginatedMembers()?.data?.length) {
+    <app-paginator [totalCount]="paginatedMembers()?.count || 0" [pageSize]="params.pageSize"
+      [pageNumber]="params.pageNumber" [totalPages]="totalPages()" (pageChange)="onPageChange($event)">
+    </app-paginator>
+    }
+  </div>
+
+  @if (isLoading()) {
+  <app-loader></app-loader>
+  } @else {
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    @for (member of paginatedMembers()?.data; track member.id) {
+    <app-member-card [member]="member"></app-member-card>
+    }
+    @empty {
+    <div class="col-span-full text-center py-12">
+      <div class="text-gray-400 text-6xl mb-4">
+        <i class="fas fa-users"></i>
+      </div>
+      <p class="text-xl text-gray-500">No members found</p>
+    </div>
+    }
+  </div>
+  }
+</div>
+
+<app-filter-modal #filterModal [hidden]="!paginatedMembers()" (closeModal)="onClose()"
+  (submitData)="onFilterChange($event)" />
