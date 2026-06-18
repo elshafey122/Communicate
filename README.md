@@ -24,26 +24,19 @@ People who liked you
 Mutual likes
 🔎 Member Filtering & Pagination
 
-Filter by gender, age range, and sort order (Last Active / Newest)
-Paginated member list for optimized performance
-🧱 Entity Framework Core
 
-Code-First migrations with SQL Server
-Repository & specifications pattern
-Clean Architecture with Core, Infrastructure, and API layers
-
-Database Design
-Users
+###Database Design
+* Users
 Personal details, photos, likes, messages
-Likes
+ Likes
 Many-to-many relationship between users
-Messages
+* Messages
 Tracks sender, receiver, timestamps, and seen status
 Photos
 Integrated with Cloudinary (main photo support)
 
 
-Technologies Used
+###Technologies Used
 .NET 8 Web API
 Entity Framework Core
 SQL Server
